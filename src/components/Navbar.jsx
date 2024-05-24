@@ -1,20 +1,30 @@
-import { Link } from 'react-router-dom'
-import "../styles/Navbar.css"
+import { Link, useLocation } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
+import { useState, useEffect } from 'react';
+import "../styles/Navbar.css";
 
 const Navbar = () => {
-  return (
-    <div className="navbar">
-        <div className="toggleButton">
-            <button><RxHamburgerMenu /></button>
-        </div>
-        <div className="links">
-            <Link to="/">Home</Link>
-            <Link to="/skills">Skills</Link>
-            <Link to="/projects">Projects</Link>
-        </div>
-    </div>
-  )
-}
+  const [expandNavbar, setExpandNavbar] = useState(false);
+  const location = useLocation();
 
-export default Navbar
+  useEffect(() => {
+    setExpandNavbar(false);
+  }, [location]);
+
+  return (
+    <div className="navbar" id={expandNavbar ? "open" : "close"}>
+      <div className="toggleButton">
+        <button onClick={() => setExpandNavbar((prev) => !prev)}>
+          <RxHamburgerMenu />
+        </button>
+      </div>
+      <div className="links">
+        <Link to="/">Home</Link>
+        <Link to="/skills">Skills</Link>
+        <Link to="/projects">Projects</Link>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
