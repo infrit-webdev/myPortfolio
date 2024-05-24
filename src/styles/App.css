@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: hsl(179, 92%, 72%);
+}
