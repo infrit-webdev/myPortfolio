@@ -48,6 +48,23 @@
     text-align: center;
 }
 
+.skills-container {
+    margin: 5rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-card {
+    height: 10rem;
+    width: 10rem;
+    background-color: rgb(30, 30, 30);
+    box-shadow: 10px 10px 20px rgba(224, 224, 224, 0.25);
+    /* border: 1px solid red; */
+}
+
 @media only screen and (max-width: 900px) {
     .navbar a {
         width: 70px;
