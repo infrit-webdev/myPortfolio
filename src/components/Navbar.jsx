@@ -1,10 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
+import "../styles/Navbar.css";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState, useEffect } from 'react';
-import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [expandNavbar, setExpandNavbar] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -12,9 +13,9 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <div className="navbar" id={expandNavbar ? "open" : "close"}>
+    <div className={`navbar ${expandNavbar ? "expanded" : ""}`}>
       <div className="toggleButton">
-        <button onClick={() => setExpandNavbar((prev) => !prev)}>
+        <button onClick={() => setExpandNavbar(prev => !prev)}>
           <RxHamburgerMenu />
         </button>
       </div>

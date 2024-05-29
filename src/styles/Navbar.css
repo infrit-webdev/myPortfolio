@@ -68,13 +68,16 @@
 @media only screen and (max-width: 900px) {
     .navbar a {
         width: 70px;
-        
     }
 
     .links {
         display: none;
     }
 
+    .navbar.expanded .links {
+        display: flex; /* Show links when navbar is expanded */
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 900px) {
@@ -86,18 +89,17 @@
 @media only screen and (max-width: 600px) {
     .toggleButton {
         display: block; /* Ensure the toggle button is visible on smaller screens */
-        
     }
 
     .links {
         display: none;
     }
 
-    #open {
-        height: 100vh;
-    }
-
-    #open .links {
-        flex-direction: row;
+    .navbar.expanded .links {
+        display: flex; /* Show links when navbar is expanded */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
     }
 }
