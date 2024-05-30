@@ -1,0 +1,35 @@
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.developer-info {
+    border: 1px solid yellow;
+}
+
+.hero-content {
+    height: 80vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.hero-content img {
+    height: 40vh;
+    width: auto;
+   
+}
+
+@media only screen and (max-width: 900px) {
+    /* stacks the containers in a column for smaller screens */
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+}
